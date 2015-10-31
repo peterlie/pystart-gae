@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block container_content %}
+
+  <div class="page-header">
+    <h3> pystart-gae </h3>
+  </div>
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-12">
+
+      {% if data %}
+
+        {{ data }}
+
+      {% else %}
+
+        Nothing to see here.
+
+      {% endif %}
+
+      </div>
+
+  </div>
+</div>
+
+{% endblock %}

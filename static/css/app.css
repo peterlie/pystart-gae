@@ -1,0 +1,56 @@
+/*
+ *  app.css - css specific to pystart-gae
+ *
+ */
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS, some of this currently unused.
+-------------------------------------------------- */
+
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.page-header {
+  margin: 10px 0 20px;
+}
+
+.signinout {
+  cursor: pointer;
+}
+
+.signin {
+  cursor: pointer;
+}
+
+.signout {
+  cursor:pointer;
+/*        margin-bottom: 5px;*/
+}

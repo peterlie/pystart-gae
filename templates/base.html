@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %} PyStart - GAE {{test_ver}}{% endblock %} </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="python app engine starter">
+    <meta name="author" content="pystart-gae">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- TODO not sure using animate -->
+    <link rel="stylesheet" type="text/css"  href="/static/css/animate.min.css">
+    <link rel="stylesheet" type="text/css"  href="/static/css/pnotify.custom.min.css" media="all" />
+
+	  <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/app.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/pnotify.custom.min.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="/static/css/app.css">
+
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/static/img/bitcoin.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-57-precomposed.png">
+
+	{% block headopt %}
+
+	{% endblock %}
+
+  </head>
+
+  <body>
+
+    {% block nav %}
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/" class="pull-left"><img style="height: 30px; margin-top: 7px;" src="/static/img/python.png"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+            <li class="dropdown">
+              <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="#">
+              Explore
+              <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <li><a href="#">Nothing Here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Or Here</a></li>
+              </ul>
+
+            {% if is_admin %}
+            <li class="dropdown">
+              <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="#">
+              Admin
+              <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <li> <a href="/admin/a"> a </a> </li>
+                <li> <a href="/admin/b"> b </a> </li>
+                <li class="divider"></li>
+                <li><a href="/admin/test"> test </a></li>
+              </ul>
+              {% endif %}
+
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            {% if request.session.username %}
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-user"></span> {{request.session.username}}<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#"><span class="fa fa-sign-out"></span> Signout</a></li>
+                  <li><a href="#"><span class="text-muted"><span class="fa fa-user"> Profile</span></a></li>
+                </ul>
+              </li>
+            {% endif %}
+          </ul>
+
+        </div><!--/.navbar-collapse -->
+      </div>
+
+    </div>
+
+
+    {% endblock %} <!-- endblock nav -->
+
+
+    {% block 2ndnav %}
+
+    {% endblock %}  <!-- endblog 2ndnav -->
+
+    {% if flashes %}
+      <div class="row hidden">
+        {% for flash in flashes %}
+        <div class="alertmsg">
+          <span class="msg">{{ flash.0 }}</span>
+          <span class="msgtype">{{ flash.1 }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+
+  <div class="container">
+
+	{% block container_content %}
+
+
+	{% endblock %}
+
+    </div> <!-- /container -->
+
+    {% block footer %}
+
+      <div class="footer">
+        <div class='container'>
+            <small>
+            <p class="text-muted">&copy; PyStart-GAE 2015 <span class="pull-right"> <a href="/about" target="_blank">About,</a>&nbsp; Version {{version}}</span></p>
+          </small>
+        </div>
+      </div>
+
+	  {% endblock %}
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+
+    {% block footopt %}
+
+    {% endblock %}
+
+  </body>
+</html>

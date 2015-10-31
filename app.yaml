@@ -1,0 +1,55 @@
+application: pystart
+version: 2
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /robots.txt
+  static_files: robots.txt
+  upload: robots.txt
+
+- url: /_ah/queue/deferred
+  script: google.appengine.ext.deferred.deferred.application
+  login: admin
+
+- url: /static
+  static_dir: static
+
+- url: /favicon.ico
+  static_files: static/images/favicon.ico
+  upload: static/images/favicon.ico
+
+- url: /admin/.*
+  script: main.app
+  login: admin
+
+- url: .*
+  script: main.app
+
+libraries:
+- name: django
+  version: "1.4"
+- name: numpy
+  version: "latest"
+- name: ssl
+  version: "latest"
+
+builtins:
+- deferred: on
+- appstats: on
+
+skip_files:
+- ^(.*/)?app\.yaml
+- ^(.*/)?app\.yml
+- ^(.*/)?.*/RCS/.*
+- ^README\..*
+- \.gitignore
+- ^\.git/.*
+- \.*\.lint$
+- ^fabfile\.py
+- ^testrunner\.py
+- ^grunt\.js
+- ^node_modules/(.*/)?
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*\.DS_Store

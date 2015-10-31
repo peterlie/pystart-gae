@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block container_content %}
+
+    <div class="page-header">
+      <h3> Admin </h3>
+    </div>
+
+<div class="container">
+  <div class="row">
+
+    <h4> Testing </h4>
+
+    <div class="col-md-12">
+
+      <form class="form" id="formt" action="/admin/runtests" method="post">
+        <button type="submit" class="btn btn-sm btn-default btn-primary">Run tests...</button>
+        <span id="helpBlock" class="help-block">Be careful</span>
+      </form>
+
+    </div>
+  </div>
+
+</div>
+
+
+  {% if results %}
+
+  <div class="row">
+
+    <div class="col-md-12">
+
+      <hr>
+
+      <h4> Results </h4>
+
+      {{ results }}
+
+    </div>
+
+  </div>
+
+  {% endif %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+cron:
+
+- description: test
+  url: /cron/test
+  schedule: every sunday 09:00
+
+- description: purger
+  url: /cron/purger
+  schedule: every sunday 22:00
+
+- description: robot
+  url: /cron/robot
+  schedule: every 30 minutes from 6:00 to 13:00
+
+- description: worker
+  url: /cron/worker
+  schedule: every 15 minutes from 3:00 to 6:00
+
+- description: report
+  url: /cron/report
+  schedule: every 24 hours

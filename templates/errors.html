@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %} Pystart-GAE Problem {% endblock %}
+
+{% block container_content %}
+
+  <div class="page-header">
+    <h3>Oh Snap. A problem.</h3>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h3> Problem Details </h3>
+      <div class="alert alert-error">
+      <p> {{ usermsg }} </p>
+      <p> {{ errormsg }} </p>
+      <p> {{ badpath }} </p>
+      <hr>
+      <p> {{ traceback|linebreaks }} </p>
+      <hr>
+      <p> {{ request }} </p>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
