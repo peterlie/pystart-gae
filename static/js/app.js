@@ -9,16 +9,16 @@
         PNotify.prototype.options.styling = 'fontawesome';
 
         $('.alertmsg').each( function() {
-            var m = $('span.msg:first-child',this).text();
-            var t = $('span.msg:first-child',this).next().text();
+            var am = $('span.msg:first-child', this);
+            var m = am.text();
+            var t = am.next().text();
 
             $(function(){
                 new PNotify({
                     type: t,
-                    title: 'Pystart-GAE',
+                    title: 'PyStart-GAE',
                     text: m,
-                    icon: false,
-                    hide: true
+                    icon: false
                 });
             });
 

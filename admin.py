@@ -97,7 +97,7 @@ class AdminHandler(BaseRequestHandler):
             # generic admin page for testing etc...
             # TODO - change name of page to admin_test for God's sake
 
-            self.session.add_flash('Not Implemented', level='alert-warning')
+            self.session.add_flash('Not Implemented', level='warning')
             return self.render_to_response(
                 'templates/admin_results.html', {'what_result': 'Testing', 'results': 'Testing Not Implemented'})
 

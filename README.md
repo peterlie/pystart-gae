@@ -1,8 +1,11 @@
-# pystart-gae
-app engine python starter boilerplate
+### pystart-gae
 
 App Engine Python boilerplate.
 
 Bootstrap 3.
 
-Slack notfications.
+Slack integration.
+
+PNotify notifications.
+
+Requires dateutil, six (included).
