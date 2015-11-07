@@ -1,6 +1,6 @@
-### pystart-gae
+## pystart-gae - an application starter for Google App Engine using Python
 
-App Engine Python boilerplate.
+### includes
 
 Bootstrap 3.
 
@@ -9,3 +9,13 @@ Slack integration.
 PNotify notifications.
 
 Requires dateutil, six (included).
+
+### todo
+
+User accounts
+
+### using
+
+Pull requests welcome
+
+MIT License

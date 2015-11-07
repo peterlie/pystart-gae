@@ -4,6 +4,8 @@
 
 This file contains utility routines. cribbed from lots of places, including Django, Mozilla etc...
 
+If you're looking for more utility goodness, also check: https://github.com/dgilland/pydash
+
 """
 
 from os import urandom
